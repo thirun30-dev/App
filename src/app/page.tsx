@@ -1,66 +1,94 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Countdown from '@/components/Countdown';
+import Registration from '@/components/Registration';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      {/* Background Decorative Mesh Glows & Grid */}
+      <div className="bg-grid"></div>
+      <div className="bg-glow-1"></div>
+      <div className="bg-glow-2"></div>
+
+      {/* Main Navigation */}
+      <Navbar />
+
+      {/* Main Sections */}
+      <main>
+        {/* Home Section */}
+        <Hero />
+
+        {/* About Section */}
+        <About />
+
+        {/* Countdown Section */}
+        <Countdown />
+
+        {/* Registration Section */}
+        <Registration />
       </main>
-    </div>
+
+      {/* Footer */}
+      <footer style={{
+        padding: '40px 24px',
+        backgroundColor: '#020617',
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+        textAlign: 'center',
+        position: 'relative',
+        zIndex: 10
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '16px'
+        }}>
+          <ScrollReveal delay={100}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              fontFamily: 'var(--font-heading)',
+              fontWeight: 700,
+              fontSize: '1rem',
+              color: 'var(--accent-cyan)'
+            }}>
+              <img
+                src="/club-logo.png"
+                alt="AWS Student Builders Group REC Logo"
+                style={{ width: '30px', height: '30px', objectFit: 'contain' }}
+              />
+              AWS Student Builders REC
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={200}>
+            <p style={{
+              fontSize: '0.85rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.5,
+              maxWidth: '500px'
+            }}>
+              A community of student builders passionate about cloud development and innovation. Empowering careers, hosting workshops, and sharing knowledge.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-muted)',
+              marginTop: '12px'
+            }}>
+              © {new Date().getFullYear()} AWS Student Builders Group at REC. All rights reserved.
+            </div>
+          </ScrollReveal>
+        </div>
+      </footer>
+    </>
   );
 }

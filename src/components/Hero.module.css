@@ -1,0 +1,353 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 120px; /* Accounts for navbar */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 25, 47, 0.5) 0%, rgba(3, 7, 18, 0.95) 100%);
+}
+
+.radialBacklight {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 50vh;
+  background: radial-gradient(circle, rgba(0, 114, 255, 0.08) 0%, transparent 80%);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Left Hero Content styling */
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badgeReveal {
+  width: 100%;
+}
+
+.clubBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--accent-cyan);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  animation: dotBlink 1.5s infinite alternate;
+}
+
+@keyframes dotBlink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.titleReveal {
+  width: 100%;
+}
+
+.mainTitle {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.subtitleReveal {
+  width: 100%;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.ctaReveal {
+  width: 100%;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ctaGroup :global(.glow-button) {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+}
+
+.ctaText {
+  letter-spacing: 0.5px;
+}
+
+.secondaryCTA {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.secondaryCTA:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+
+/* Right Hero Visual elements */
+.heroRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.visualReveal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cyberCardWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cyberCard {
+  width: 100%;
+  background: rgba(5, 11, 22, 0.85);
+  border-radius: 12px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: rgba(10, 25, 47, 0.8);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dotGroup {
+  display: flex;
+  gap: 6px;
+}
+
+.windowDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminalLabel {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.cardBody {
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #a5b4fc;
+}
+
+.terminalLine {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.prompt {
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+.command {
+  color: var(--text-primary);
+}
+
+.outputLine {
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border-left: 2px solid var(--accent-blue);
+}
+
+.detailLabel {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.statusLive {
+  color: #27c93f;
+  font-weight: bold;
+  animation: pulseGlowTiny 1.5s infinite alternate;
+}
+
+@keyframes pulseGlowTiny {
+  0% { text-shadow: 0 0 2px rgba(39, 201, 63, 0.3); }
+  100% { text-shadow: 0 0 8px rgba(39, 201, 63, 0.8); }
+}
+
+.typingCursorContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typingText {
+  color: #e0e7ff;
+}
+
+.cursor {
+  color: var(--accent-cyan);
+  font-weight: bold;
+  animation: cursorBlink 1s infinite steps(2);
+}
+
+@keyframes cursorBlink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Floating overlay badge */
+.floatingBadge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+.floatingBadgeIcon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 4px var(--accent-cyan));
+}
+
+.floatingBadgeTitle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+}
+
+.floatingBadgeSub {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .mainTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .heroLeft {
+    align-items: center;
+    text-align: center;
+  }
+  .mainTitle {
+    font-size: 2.6rem;
+  }
+  .description {
+    margin: 0 auto 24px auto;
+  }
+  .ctaGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .heroRight {
+    order: -1; /* Puts the terminal graphic on top for mobile */
+  }
+  .cyberCardWrapper {
+    max-width: 380px;
+  }
+  .floatingBadge {
+    bottom: -10px;
+    left: 10px;
+  }
+}

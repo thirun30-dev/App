@@ -1,0 +1,427 @@
+.aboutSection {
+  position: relative;
+  padding: 100px 0;
+  background: var(--bg-darkest);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header Styling */
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.sectionDescription {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Tab Control Styles */
+.tabContainerReveal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.tabContainer {
+  display: inline-flex;
+  background: rgba(10, 25, 47, 0.4);
+  border: 1px solid var(--glass-border);
+  padding: 6px;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.tabBtn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tabBtn:hover {
+  color: var(--text-primary);
+}
+
+.tabBtnActive {
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.05);
+}
+
+/* Grid Layout (Key Learning Tracks) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.cardWrapper {
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  padding: 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan-glow);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.6),
+    0 0 20px var(--accent-blue-glow);
+}
+
+.iconContainer {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconContainer {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(0, 240, 255, 0.08);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--accent-cyan);
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.cardHoverBorder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardHoverBorder {
+  transform: scaleX(1);
+}
+
+/* Timeline Layout (Agenda) */
+.timelineContainer {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timelineItemReveal {
+  width: 100%;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.timelineTime {
+  width: 190px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 24px;
+}
+
+.timeBadge {
+  background: rgba(10, 25, 47, 0.6);
+  border: 1px solid var(--glass-border);
+  color: var(--accent-cyan);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.timelineDotContainer {
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+  margin-top: 28px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineDot {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 15px var(--accent-cyan);
+  transform: scale(1.3);
+}
+
+.timelineLine {
+  position: absolute;
+  top: 40px;
+  bottom: -40px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-blue) 0%, rgba(10, 25, 47, 0.1) 100%);
+  z-index: 1;
+}
+
+.timelineContent {
+  flex-grow: 1;
+  padding: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timelineItem:hover .timelineContent {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateX(5px);
+}
+
+.timelineTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.timelineSpeaker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.speakerIcon {
+  font-size: 0.85rem;
+}
+
+.timelineDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Club Block Banner styling */
+.clubBlockReveal {
+  width: 100%;
+}
+
+.clubBlock {
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.45) 0%, rgba(3, 7, 18, 0.6) 100%);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+}
+
+.clubBlock:hover {
+  border-color: rgba(0, 114, 255, 0.3);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 114, 255, 0.15);
+}
+
+.clubBlockContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.clubBlockText {
+  flex: 1;
+}
+
+.clubBlockTitle {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent-cyan);
+}
+
+.clubBlockPara {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.logoBadgeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  transition: all 0.5s ease;
+}
+
+.clubBlock:hover .logoBadgeContainer {
+  transform: scale(1.05);
+  border-color: var(--accent-cyan-glow);
+  box-shadow: 
+    0 0 25px var(--accent-blue-glow),
+    inset 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.clubBlockLogo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.2));
+}
+
+.clubBlock:hover .clubBlockLogo {
+  transform: rotate(360deg);
+  filter: drop-shadow(0 0 12px var(--accent-cyan));
+}
+
+/* Responsiveness options */
+@media (max-width: 992px) {
+  .clubBlockContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .logoBadgeContainer {
+    width: 110px;
+    height: 110px;
+  }
+  .clubBlockLogo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 24px;
+  }
+  .clubBlock {
+    padding: 24px;
+  }
+  .clubBlockTitle {
+    font-size: 1.4rem;
+  }
+  .timelineItem {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .timelineTime {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+  .timelineDotContainer {
+    display: none; /* Hide bullets in mobile to save space */
+  }
+  .timelineContent {
+    width: 100%;
+  }
+}
