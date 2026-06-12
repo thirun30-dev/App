@@ -61,7 +61,7 @@ export default function Home() {
               <img
                 src="/club-logo.png"
                 alt="AWS Student Builders Group REC Logo"
-                style={{ width: '30px', height: '30px', objectFit: 'contain' }}
+                style={{ width: '30px', height: '30px', objectFit: 'contain', borderRadius: '50%' }}
               />
               AWS Student Builders REC
             </div>
